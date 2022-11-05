@@ -1,0 +1,10 @@
+key,ticker,caption,abstract-text,link,key:teacher
+course-01,COU-001,Recipe,The Good Recipe,https://www.recipe1.com,teacher-01
+course-02,COU-002,Recipe,The Bad Recipe,https://www.recipe2.com,teacher-01
+course-03,COU-003,Recipe,The Regular Recipe,https://www.recipe3.com,teacher-01
+course-04,COU-004,Recipe,The Good Recipe,https://www.recipe4.com,teacher-01
+course-05,COU-005,Recipe,The Bad Recipe,https://www.recipe5.com,teacher-01
+course-06,COU-006,Recipe,The Regular Recipe,https://www.recipe6.com,teacher-02
+course-07,COU-007,Recipe,The Good Recipe,https://www.recipe7.com,teacher-02
+course-08,COU-008,Recipe,The Regular Recipe,https://www.recipe8.com,teacher-02
+course-09,COU-009,Recipe,The Bad Recipe,https://www.recipe9.com,teacher-02

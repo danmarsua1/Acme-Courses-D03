@@ -1,0 +1,2 @@
+key,accepted-currencies,currency,spam-records,spam-threshold,spam-booster
+configuration-01,"EUR,USD,GBP",EUR,"(term:sex-weight:0.10-termBooster:X),(term:viagra-weight:0.80-termBooster:cheap),(term:cialis-weight:0.80-termBooster:cheap'),(term:hard core-weight:0.10-termBooster:picture),(term:sexy-weight:0.05-termBooster:X),(term:nigeria-weight:0.05-termBooster:million),(term:you've won-weight:0.05-termBooster:nigeria),(term:one million-weight:0.10-termBooster:X)",0.10,1.25
