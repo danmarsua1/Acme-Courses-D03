@@ -14,23 +14,23 @@ public class AdministratorDashboard implements Serializable {
 
 	Integer						totalNumberOfTheoryTutorials;
 
-	List<Object>						averageRetailPriceOfTheoryTutorials;
+	List<Object>						averageCostOfTheoryTutorials;
 
-	List<Object>						deviationRetailPriceOfTheoryTutorials;
+	List<Object>						deviationCostOfTheoryTutorials;
 
-	List<Object>						minimumRetailPriceOfTheoryTutorials;
+	List<Object>						minimumCostOfTheoryTutorials;
 
-	List<Object>						maximumRetailPriceOfTheoryTutorials;
+	List<Object>						maximumCostOfTheoryTutorials;
 
 	Integer						totalNumberOfLabTutorials;
 
-	List<Object>						averageRetailPriceOfLabTutorials;
+	List<Object>						averageCostOfLabTutorials;
 
-	List<Object>						deviationRetailPriceOfLabTutorials;
+	List<Object>						deviationCostOfLabTutorials;
 
-	List<Object>						minimumRetailPriceOfLabTutorials;
+	List<Object>						minimumCostOfLabTutorials;
 
-	List<Object>						maximumRetailPriceOfLabTutorials;
+	List<Object>						maximumCostOfLabTutorials;
 
 	Integer						totalNumberOfProposedHelpRequests;
 

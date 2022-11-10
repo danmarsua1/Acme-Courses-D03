@@ -19,12 +19,14 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Range;
 
 import acme.framework.datatypes.AbstractDatatype;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Embeddable
 @Getter
 @Setter
+@AllArgsConstructor
 public class SpamRecord extends AbstractDatatype {
 
 	// Serialisation identifier -----------------------------------------------
@@ -43,23 +45,5 @@ public class SpamRecord extends AbstractDatatype {
 	protected String boosterTerm;
 
 	// Object interface -------------------------------------------------------
-
-	@Override
-	public String toString() {
-		StringBuilder dataBuilder = new StringBuilder();
-		appendFieldValue(dataBuilder, term);
-		appendFieldValue(dataBuilder, Double.toString(weight));
-		appendFieldValue(dataBuilder, boosterTerm);
-
-		return dataBuilder.toString();
-	}
-
-	private void appendFieldValue(StringBuilder dataBuilder, String fieldValue) {
-		if (fieldValue != null) {
-			dataBuilder.append(fieldValue).append(",");
-		} else {
-			dataBuilder.append("").append(",");
-		}
-	}
 
 }
