@@ -19,6 +19,9 @@ public class AdministratorConfigurationShowService implements AbstractShowServic
 	@Autowired
 	protected AdministratorConfigurationRepository repository;
 	
+	@Autowired
+	private SpamHelper spamHelper;
+	
 	@Override
 	public boolean authorise(final Request<Configuration>request) {
 		assert request!=null;
@@ -44,24 +47,7 @@ public class AdministratorConfigurationShowService implements AbstractShowServic
 		
 		
 		request.unbind(entity, model,"currency","acceptedCurrencies","spamRecords","spamThreshold","spamBooster");
-		model.setAttribute("spamRecordObjects", this.convertStringToSpamRecords(entity.getSpamRecords()));
-		
-	}
-	
-	// Other methods
-	public List<SpamRecord> convertStringToSpamRecords(String stringSpamRecords){
-		
-		List<SpamRecord> res = new ArrayList<SpamRecord>();
-		SpamRecord newSpamRecord = null;
-		
-		List<String> spamRecords = Arrays.asList(stringSpamRecords.split(","));
-		for (String oldSpamRecord:spamRecords) {
-			String[] terms = oldSpamRecord.split("-");
-			newSpamRecord = new SpamRecord(terms[0], Double.valueOf(terms[1]), terms[2]);
-			res.add(newSpamRecord);
-		}
-		
-		return res;
+		model.setAttribute("spamRecordObjects", this.spamHelper.convertStringToSpamRecords(entity.getSpamRecords()));
 		
 	}
 }
