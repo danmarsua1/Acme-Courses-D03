@@ -24,7 +24,7 @@ public class SpamHelper {
 		List<String> spamRecords = Arrays.asList(stringSpamRecords.split(","));
 		for (String oldSpamRecord : spamRecords) {
 			String[] terms = oldSpamRecord.split("-");
-			newSpamRecord = new SpamRecord(terms[0], Double.valueOf(terms[1]), terms[2]=="X" ? "" : terms[2]);
+			newSpamRecord = new SpamRecord(terms[0], Double.valueOf(terms[1]), "X".equals(terms[2]) ? "" : terms[2]);
 			res.add(newSpamRecord);
 		}
 
@@ -45,12 +45,12 @@ public class SpamHelper {
 			totalFactor += this.applySpamFactorByText(sr, text, spamBooster);
 		}
 		
-		return totalFactor > spamThreshold ? true : res;
+		return totalFactor > spamThreshold || res;
 	}
 	
 	public Double applySpamFactorByText(SpamRecord spamRecords, String text, Double spamBooster) {
 		
-		Double totalWeight = 0.0;
+		Double totalWeight;
 		Double totalBoosted = 0.0;
 		
 		String term = spamRecords.getTerm();
@@ -74,7 +74,7 @@ public class SpamHelper {
 	public int countOccurrences(String text, String word)
 	{
 	    // split the string by spaces in a
-	    String a[] = text.split(" ");
+	    String[] a = text.split(" ");
 	 
 	    // search for pattern in a
 	    int count = 0;
