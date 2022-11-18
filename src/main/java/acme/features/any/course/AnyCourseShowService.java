@@ -77,8 +77,8 @@ public class AnyCourseShowService implements AbstractShowService<Any, Course>{
 		// Has Theory tutorial or Lab Tutorial
 		Collection<TheoryTutorial> theoryTutorials  = this.theoryTutorialRepository.findManyTheoryTutorialsByCourseId(courseId);
 		Collection<LabTutorial> labTutorials  = this.labTutorialRepository.findManyLabTutorialsByCourseId(courseId);
-		hasTheoryTutorial = theoryTutorials.isEmpty();
-		hasLabTutorial = labTutorials.isEmpty();
+		hasTheoryTutorial = !theoryTutorials.isEmpty();
+		hasLabTutorial = !labTutorials.isEmpty();
 		model.setAttribute("hasTheoryTutorial", hasTheoryTutorial);
 		model.setAttribute("hasLabTutorial", hasLabTutorial);
 	}
