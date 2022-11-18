@@ -1,18 +1,14 @@
 package acme.features.administrator.configuration;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.SpamRecord;
 import acme.entities.Configuration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.SpamHelper;
 
 @Service
 public class AdministratorConfigurationShowService implements AbstractShowService<Administrator,Configuration>{
