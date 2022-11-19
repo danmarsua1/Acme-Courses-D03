@@ -27,10 +27,10 @@ public interface AnyTheoryTutorialRepository extends AbstractRepository {
 	@Query("select t from TheoryTutorial t where t.id = :id")
 	TheoryTutorial findOneTheoryTutorialById(int id);
 	
-	@Query("select t from TheoryTutorial t")
+	@Query("select t from TheoryTutorial t where t.publish = true")
 	List<TheoryTutorial> findAllTheoryTutorials();
 
-	@Query("select t from Course c, Register r, TheoryTutorial t where c.id = r.course.id and r.theoryTutorial.id = t.id and c.id = :id")
+	@Query("select t from Course c, Register r, TheoryTutorial t where c.id = r.course.id and r.theoryTutorial.id = t.id and c.id = :id and t.publish = true")
 	Collection<TheoryTutorial> findManyTheoryTutorialsByCourseId(int id);
 	
 	
