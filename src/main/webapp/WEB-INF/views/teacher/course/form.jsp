@@ -20,7 +20,11 @@
 	<acme:input-textbox code="teacher.course.form.label.caption" path="caption"/>
 	<acme:input-textbox code="teacher.course.form.label.abstractText" path="abstractText"/>
 	<acme:input-textbox code="teacher.course.form.label.link" path="link"/>
-	<acme:input-textbox readonly="true" code="teacher.course.form.label.totalPrice" path="totalPrice"/>
+	<jstl:if test="${hasTheoryTutorial eq true || hasLabTutorial eq true}">
+		<acme:input-textbox readonly="true"
+		code="teacher.course.form.label.totalPrice" path="totalPrice" />
+	</jstl:if>
+		
 	<jstl:if test="${hasTheoryTutorial eq true}">
 		<acme:button code="any.course.form.label.list-theory-tutorial" action="/any/theory-tutorial/list?masterId=${id}"/>
 	</jstl:if>
